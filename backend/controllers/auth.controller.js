@@ -1,8 +1,29 @@
-export const signup =(req,res)=>{
-    res.send("hidh");
-    console.log("singied up");
-}
+import User from "../models/user.model.js";
+
+export const signup = async (req, res) => {
+	try {
+		const { fullName, username, password, confirmPassword, gender } = req.body;
+        if (password !== confirmPassword) {
+			return res.status(400).json({ error: "Passwords don't match" });
+		}
+
+        const user = await User.findOne({ username });
+
+    }
+    catch(error){
+
+    }
+};
+
+
+
+
 
 export const login =(req,res)=>{
     console.log("loged in up");
+}
+
+
+export const logout =(req,res)=>{
+    console.log("logout up");
 }
