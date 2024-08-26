@@ -12,8 +12,6 @@ app.use(express.json());
 app.use("/auth", authRoutes);
 
 
-
-
 // Start the server and connect to MongoDB
 app.listen(PORT, () => {
     connectToMongoDB(); // Connect to MongoDB when the server starts
