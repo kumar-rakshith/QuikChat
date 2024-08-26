@@ -20,6 +20,6 @@ app.use("/auth", authRoutes);
 // Start the server and connect to MongoDB
 app.listen(PORT, () => {
     connectToMongoDB(); // Connect to MongoDB when the server starts
-    console.log(`Server Running on port ${PORT}`); // Fixed typo here
+    console.log(`THe Server Running on port ${PORT}`); // Fixed typo here
 });
 
