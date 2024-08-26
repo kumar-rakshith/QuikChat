@@ -6,16 +6,12 @@ import connectToMongoDB from "./db/connectToMongoDb.js"; // Note the space betwe
 const app = express();
 const PORT = 5000;
 
-// Load environment variables from .env file
+
 dotenv.config();
-
-// Root route
-app.get("/", (req, res) => {
-    res.send("Hello Change Mantha World");
-});
-
-// Authentication routes
 app.use("/auth", authRoutes);
+
+
+
 
 // Start the server and connect to MongoDB
 app.listen(PORT, () => {
