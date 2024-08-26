@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 
 export const signup = async (req, res) => {
+    console.log(req.body);
     try {
         const { fullName, username, password, confirmPassword, gender } = req.body;
         if (password !== confirmPassword) {
@@ -20,7 +21,7 @@ export const signup = async (req, res) => {
         const newUser = new User({
             fullName,
             username,
-            password: hashedPassword,
+            password,
             gender,
             profilePic: gender === "male" ? boyProfilePic : girlProfilePic,
         });
