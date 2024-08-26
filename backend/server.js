@@ -8,8 +8,9 @@ const PORT = 5000;
 
 
 dotenv.config();
-app.use("/auth", authRoutes);
 app.use(express.json());
+app.use("/auth", authRoutes);
+
 
 
 
