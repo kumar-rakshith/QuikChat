@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import authRoutes from "./routes/auth.routes.js";
+import messageRoutes from "./routes/message.routes.js";
 import connectToMongoDB from "./db/connectToMongoDb.js"; // Note the space between `from` and `"./db/connectToMongoDb.js"`
 
 const app = express();
@@ -10,7 +11,7 @@ const PORT = 5000;
 dotenv.config();
 app.use(express.json());
 app.use("/auth", authRoutes);
-
+app.use("/message", messageRoutes);
 
 // Start the server and connect to MongoDB
 app.listen(PORT, () => {
